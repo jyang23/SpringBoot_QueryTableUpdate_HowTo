@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="jumbotron lead text-center">
+        <h2> Blog Post </h2>
+        <p style="text-align: center;">
+            <tr th:each="user : ${users}">
+                <b>
+                    <th>Hello:</th>
+                    <td th:text="${user.firstName}+' '+${user.lastName}"></td>
+                </b><br>
+                <a th:href="@{/update/{id}(id = ${user.id})}">Update</a>
+                <img src="https://secure.gravatar.com/avatar/?s=96&d=https%3A%2F%2Fnews.microsoft.com%2Fwp-content%2Fthemes%2Fmicrosoft-news-center-2016%2Fassets%2Fimg%2Fdefault-avatar.png&r=g"
+                     alt="avatar" width="200" height="200" class="center"><br>
+            </tr>
+        </p>
+    </div>
+</div>
+</body>
+</html>
